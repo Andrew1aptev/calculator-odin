@@ -17,7 +17,7 @@ buttons.forEach(button => {
             newValue = ""
         }
         // Если нажата кнопка "<<", удаляем последний символ с дисплея
-        if(buttonText === "<<"){
+        if(buttonText === "&lt;&lt;"){
             newValue = currentValue.slice(0, -1);
         }
         // Если нажата кнопка "=", вычисляем результат
