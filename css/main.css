@@ -138,10 +138,12 @@ body {
 
 .calculator__display {
   display: flex;
+  align-items: center;
+  height: 100px;
   justify-content: flex-end;
+  padding-right: 10px;
   background-color: rgb(131, 245, 140);
   border: 3px solid rgb(255, 255, 255);
-  padding: 10px;
   margin-bottom: 20px;
   font-size: 25px;
   border-radius: 10px;
