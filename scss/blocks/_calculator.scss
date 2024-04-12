@@ -45,6 +45,13 @@
     background-color: rgb(223, 255, 150);
     border: 1px solid black;
     border-radius: 10px;
+    transition: all .3s;
+}
+.calculator__btn:hover{
+    opacity: 40%;
+}
+.calculator__btn:active{
+    transform: scale(1.1);
 }
 .calculator__btn--white{
     background-color: white;
