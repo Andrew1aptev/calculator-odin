@@ -1,34 +1,34 @@
-// Select the calculator's display element
+// Выбираем элемент отображения калькулятора
 const display = document.querySelector(".calculator__display");
-// Select all the buttons of the calculator
+// Выбираем все кнопки калькулятора
 const buttons = document.querySelectorAll(".calculator__btn");
-// Loop over each button
+// Перебираем каждую кнопку
 buttons.forEach(button => {
-    // Add a click event listener to each button
+    // Добавляем обработчик события клика на каждую кнопку
     button.addEventListener("click",(event) => {
-        // Get the text inside the clicked button
+        // Получаем текст внутри нажатой кнопки
         const buttonText = event.target.innerHTML;
-        // Get the current text in the display
+        // Получаем текущий текст на дисплее
         const currentValue = display.textContent;
-        // Concatenate the current display text and the button text to form a new value
+        // Соединяем текущий текст дисплея и текст кнопки для формирования нового значения
         let newValue = `${currentValue}${buttonText}`;
-        // If the "Clear" button is clicked, clear the display
+        // Если нажата кнопка "Clear", очищаем дисплей
         if(buttonText === "Clear"){
             newValue = ""
         }
-        // If the "<<" button is clicked, remove the last character from the display
-        if(buttonText === "&lt;&lt;"){
+        // Если нажата кнопка "<<", удаляем последний символ с дисплея
+        if(buttonText === "<<"){
             newValue = currentValue.slice(0, -1);
         }
-        // If the "=" button is clicked, calculate the result
+        // Если нажата кнопка "=", вычисляем результат
         if(buttonText === "="){
-            // Split the current value into terms by the operators
+            // Разделяем текущее значение на части по операторам
             let terms = currentValue.split(/(?=[+\-*/])/);
-            // Convert the first term to a number and store it as the result
+            // Преобразуем первый член в число и сохраняем его как результат
             let result = Number(terms[0]);
-            // Loop over the rest of the terms, starting from index 1
+            // Перебираем остальные члены, начиная с индекса 1
             for(let index = 1; index < terms.length; index++){
-                // Perform the operation based on the operator in the term
+                // Выполняем операцию в зависимости от оператора в члене
                 switch(terms[index][0]){
                     case "+":
                         result += Number(terms[index].slice(1));
@@ -44,12 +44,13 @@ buttons.forEach(button => {
                         break;
                 }
             }
-            // Set the new value to the result
+            // Устанавливаем новое значение в результат
             newValue = result;
         }
-        // Update the display with the new value
+        // Обновляем дисплей новым значением
         display.textContent = newValue;
     })
 });
+
 
 
