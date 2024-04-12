@@ -25,7 +25,7 @@ buttons.forEach(button => {
         }
 
         // If the "<<" button is clicked, remove the last character from the display
-        if(buttonText === "<<"){
+        if(buttonText === "&lt;&lt;"){
             newValue = currentValue.slice(0, -1);
         }
 
