@@ -172,6 +172,11 @@ body {
   background-color: white;
 }
 
+.calculator__btn--clear {
+  grid-column: span 2;
+  background-color: rgb(84, 235, 134);
+}
+
 .calculator__btn--equal {
   grid-column: span 2;
   background-color: rgb(201, 249, 255);
